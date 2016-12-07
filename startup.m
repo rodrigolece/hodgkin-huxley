@@ -2,6 +2,8 @@ function startup()
 
 global dV dn dm dh initial_vec end_time error_tolerance
 
+% sympref('HeavisideAtOrigin', 1);
+
 alpha_n = @(V) 0.01*(V + 10) / (exp((V + 10)/10) - 1);
 beta_n = @(V) 0.125*exp(V/80);
 
