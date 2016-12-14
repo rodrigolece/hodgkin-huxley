@@ -5,7 +5,7 @@ span = Amax - Amin;
 while  span > tol
     A = 0.5*(Amin + Amax);
     
-    setupCurrent(A, deltaT)
+    setCurrent(deltaT, A)
     [~, Vs] = hodgkinHuxley();
     
     if countActions(Vs) == 1

@@ -1,4 +1,4 @@
-function setupCurrent(A, deltaT)
+function setCurrent(deltaT, A)
 
 global dV dn dm dh dvec
 

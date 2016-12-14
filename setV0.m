@@ -1,4 +1,4 @@
-function startup()
+function setV0(V_0)
 
 global dV dn dm dh initial_vec end_time error_tolerance
 
@@ -27,10 +27,9 @@ dn = @(V, n) alpha_n(V)*(1 - n) - beta_n(V)*n;
 dm = @(V, m) alpha_m(V)*(1 - m) - beta_m(V)*m;
 dh = @(V, h) alpha_h(V)*(1 - h) - beta_h(V)*h;
 
-V_0 = 0;
-n_0 = alpha_n(0) / (alpha_n(0) + beta_n(0));
-m_0 = alpha_m(0) / (alpha_m(0) + beta_m(0));
-h_0 = alpha_h(0) / (alpha_h(0) + beta_h(0));
+n_0 = alpha_n(V_0) / (alpha_n(V_0) + beta_n(V_0));
+m_0 = alpha_m(V_0) / (alpha_m(V_0) + beta_m(V_0));
+h_0 = alpha_h(V_0) / (alpha_h(V_0) + beta_h(V_0));
 
 initial_vec = [V_0; n_0; m_0; h_0];
 
