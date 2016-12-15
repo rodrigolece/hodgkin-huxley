@@ -1,6 +1,6 @@
 function setV0(V_0)
 
-global dV dn dm dh initial_vec end_time error_tolerance
+global dV dn dm dh initial_vec
 
 % sympref('HeavisideAtOrigin', 1);
 
@@ -32,7 +32,4 @@ m_0 = alpha_m(V_0) / (alpha_m(V_0) + beta_m(V_0));
 h_0 = alpha_h(V_0) / (alpha_h(V_0) + beta_h(V_0));
 
 initial_vec = [V_0; n_0; m_0; h_0];
-
-end_time = 50;
-error_tolerance = odeset('RelTol', 1e-8, 'AbsTol', 1e-10);
 end
