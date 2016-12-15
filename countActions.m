@@ -1,6 +1,6 @@
 function out = countActions(Vs)
 
-idxSpikes = find(Vs < -50);
+idxSpikes = find(Vs > 50);
 
 if isempty(idxSpikes)
     out = 0;
