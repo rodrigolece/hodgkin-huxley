@@ -1,11 +1,11 @@
-function [Kmin, Kmax] = findThresholdKT(A, deltaT, T, Kmin, Kmax, tol)
+function [Kmin, Kmax] = findThresholdTK(deltaT, A, T, Kmin, Kmax, tol)
 
 span = Kmax - Kmin;
 
 while  span > tol
     K = 0.5*(Kmin + Kmax);
     
-    setup2Currents(A, deltaT, K, T)
+    set2currents(deltaT, A, T, K)
     [~, Vs] = hodgkinHuxley();
     
     if countActions(Vs) == 2
