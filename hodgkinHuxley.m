@@ -6,7 +6,7 @@ global dvec end_time initial_vec error_tolerance
 Vs = vec(:,1);
 
 if nargout == 0
-    plot(ts, -Vs)
+    plot(ts, Vs)
 elseif nargout == 2
     varargout{1} = ts;
     varargout{2} = Vs;

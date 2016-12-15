@@ -4,22 +4,22 @@ global dV dn dm dh initial_vec end_time error_tolerance
 
 % sympref('HeavisideAtOrigin', 1);
 
-alpha_n = @(V) 0.01*(V + 10) / (exp((V + 10)/10) - 1);
-beta_n = @(V) 0.125*exp(V/80);
+alpha_n = @(V) 0.01*(10 - V) / (exp((10 - V)/10) - 1);
+beta_n = @(V) 0.125*exp(-V/80);
 
-alpha_m = @(V) 0.1*(V + 25) / (exp((V + 25)/10) - 1);
-beta_m = @(V) 4*exp(V/18);
+alpha_m = @(V) 0.1*(25 - V) / (exp((25 - V)/10) - 1);
+beta_m = @(V) 4*exp(-V/18);
 
-alpha_h = @(V) 0.07*exp(V/20);
-beta_h = @(V) 1 / (exp((V + 30)/10) + 1);
+alpha_h = @(V) 0.07*exp(-V/20);
+beta_h = @(V) 1 / (exp((30 - V)/10) + 1);
 
 C = 1;
 g_k = 36;
 g_na = 120;
 g_l = 0.3;
-V_k = 12;
-V_na = -115;
-V_l = -10.613;
+V_k = -12;
+V_na = 115;
+V_l = 10.613;
 
 dV = @(V, n, m , h, I) 1/C*( I -  g_k*n^4*(V - V_k) - ...
     g_na*m^3*h*(V - V_na) - g_l*(V - V_l) );
