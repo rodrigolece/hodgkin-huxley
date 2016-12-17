@@ -20,7 +20,7 @@ if nargout == 0
     set(gca, 'fontsize', 16)
 elseif nargout == 2
     varargout{1} = ts;
-    varargout{2} = Vs;
+    varargout{2} = vs;
 elseif nargout == 5
     varargout{1} = ts;
     varargout{2} = Vs;
